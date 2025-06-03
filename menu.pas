@@ -284,7 +284,7 @@ begin
     Readln(Input);
     Number := StrToIntDef(Input, -1);
     if Number < 0 then
-      Writeln('Ошибка: Введите положительное число');
+      Writeln('Ошибка: Введите неотрицательное число');
   until Number >= 0;
 
   repeat
@@ -292,7 +292,7 @@ begin
     Readln(Input);
     Goals := StrToIntDef(Input, -1);
     if Goals < 0 then
-      Writeln('Ошибка: Введите положительное число');
+      Writeln('Ошибка: Введите неотрицательное число');
   until Goals >= 0;
 
   repeat
@@ -300,7 +300,7 @@ begin
     Readln(Input);
     Assists := StrToIntDef(Input, -1);
     if Assists < 0 then
-      Writeln('Ошибка: Введите положительное число');
+      Writeln('Ошибка: Введите неотрицательное число');
   until Assists >= 0;
 
   repeat
@@ -308,10 +308,10 @@ begin
     Readln(Input);
     PenaltyMinutes := StrToIntDef(Input, -1);
     if PenaltyMinutes < 0 then
-      Writeln('Ошибка: Введите положительное число');
+      Writeln('Ошибка: Введите неотрицательное число');
   until PenaltyMinutes >= 0;
 
-  if AddPlayer(Name, TeamName, Number, Goals, Assists, PenaltyMinutes, '') then
+  if AddPlayer(Name, TeamName, Number, Goals, Assists, PenaltyMinutes) then
   begin
     Writeln('Игрок успешно добавлен');
     ViewPlayers;
@@ -426,7 +426,7 @@ begin
   Readln(Input);
   NewPenaltyMinutes := StrToIntDef(Input, -1);
 
-  if UpdatePlayer(PlayerNumber, NewName, NewTeamName, NewGoals, NewAssists, NewPenaltyMinutes, '') then
+  if UpdatePlayer(PlayerNumber, NewName, NewTeamName, NewGoals, NewAssists, NewPenaltyMinutes) then
   begin
     Writeln('Данные игрока успешно обновлены');
     ViewPlayers;
